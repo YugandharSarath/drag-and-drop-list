@@ -1,4 +1,4 @@
-⬆️ **Drag and Drop List – Short Problem Description**
+⬆️ **Drag and Drop List**
 
 ---
 
