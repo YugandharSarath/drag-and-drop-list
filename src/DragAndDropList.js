@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import "../styles.css";
-
-type Task = {
-  id: string;
-  label: string;
-};
-
-type ColumnType = "todo" | "inprogress" | "done";
+import "./styles.css";
 
 const initialData = {
   todo: [
@@ -17,20 +10,19 @@ const initialData = {
   done: [{ id: "task-4", label: "Task 4" }],
 };
 
-const DragAndDropList: React.FC = () => {
-  const [columns, setColumns] =
-    useState<Record<ColumnType, Task[]>>(initialData);
-  const [draggedTask, setDraggedTask] = useState<Task | null>(null);
+const DragAndDropList = () => {
+  const [columns, setColumns] = useState(initialData);
+  const [draggedTask, setDraggedTask] = useState(null);
 
-  const handleDragStart = (task: Task) => {
+  const handleDragStart = (task) => {
     setDraggedTask(task);
   };
 
-  const handleDrop = (col: ColumnType) => {
+  const handleDrop = (col) => {
     if (!draggedTask) return;
 
     const newColumns = { ...columns };
-    for (const key of Object.keys(newColumns) as ColumnType[]) {
+    for (const key of Object.keys(newColumns)) {
       newColumns[key] = newColumns[key].filter((t) => t.id !== draggedTask.id);
     }
 
@@ -39,13 +31,13 @@ const DragAndDropList: React.FC = () => {
     setDraggedTask(null);
   };
 
-  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+  const handleDragOver = (e) => {
     e.preventDefault();
   };
 
   return (
     <div className="board">
-      {(["todo", "inprogress", "done"] as ColumnType[]).map((col) => (
+      {["todo", "inprogress", "done"].map((col) => (
         <div
           key={col}
           className="column"

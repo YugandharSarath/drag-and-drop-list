@@ -1,5 +1,5 @@
 import React from "react";
-import DragAndDropList from "./components/DragAndDropList";
+import DragAndDropList from "./DragAndDropList";
 
 function App() {
   return <DragAndDropList />;
