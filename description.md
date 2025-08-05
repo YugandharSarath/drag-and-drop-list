@@ -15,6 +15,8 @@ Build a **Kanban-style task board** in React that supports **native HTML5 drag-a
 * Edit task labels inline.
 * Delete tasks.
 
+Each task card should have the CSS class: className="task".
+
 The UI must be responsive, interactive, and reflect changes immediately via state updates.
 
 ---
@@ -83,6 +85,7 @@ The UI must be responsive, interactive, and reflect changes immediately via stat
 * ✅ Initial task distribution:
 
   * e.g., `Task 1`, `Task 2` in To Do, `Task 3` in In Progress, `Task 4` in Done.
+* Each task card must include className="task" for semantic styling and testing.
 
 ---
 
